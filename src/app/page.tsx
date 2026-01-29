@@ -1,5 +1,7 @@
-import { ArchiveIcon } from "lucide-react";
+import { ArchiveIcon, MessageCircleIcon, ThumbsUpIcon } from "lucide-react";
 import { Section } from "@/components/section"
+import { Card } from "@/components/card";
+import { Button } from "@/components/button";
 
 export default function Home() {
 
@@ -18,10 +20,30 @@ export default function Home() {
             </Section.IssueCount>
           </Section.Header>
           <Section.Content>
-            <div>card 1</div>
-            <div>card 2</div>
-            <div>card 3</div>
-            <div>card 4</div>
+            <Card.Root>
+              <Card.Header>
+                <Card.Number>
+                  ECO-001
+                </Card.Number>
+                <Card.Title>
+                  Implement authentication flow
+                </Card.Title>
+              </Card.Header>
+              <Card.Footer>
+                <Button
+                  type="button"
+                >
+                  <ThumbsUpIcon className="size-3" />
+                  <span className="text-sm">12</span>
+                </Button>
+                <Button
+                  type="button"
+                >
+                  <MessageCircleIcon className="size-3" />
+                  <span className="text-sm">6</span>
+                </Button>
+              </Card.Footer>
+            </Card.Root>
           </Section.Content>
         </Section.Root>
       </main>
