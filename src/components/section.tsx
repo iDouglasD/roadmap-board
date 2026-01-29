@@ -38,7 +38,7 @@ interface SectionContentProps extends ComponentProps<"div"> { }
 
 function SectionContent({ className, ...props }: SectionContentProps) {
   return (
-    <div className={cn("flex flex-col gap-2.5 p-3", className)} {...props} />
+    <div className={cn("flex flex-col gap-2.5 p-3 overflow-y-auto", className)} {...props} />
   )
 }
 
