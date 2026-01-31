@@ -1,5 +1,5 @@
+import type { ComponentProps } from "react";
 import { cn } from "@/utils/tw-merge";
-import { ComponentProps } from "react";
 
 interface InputProps extends ComponentProps<"input"> { }
 

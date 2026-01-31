@@ -3,6 +3,7 @@ import "./globals.css";
 
 import { Inter } from "next/font/google";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
+import { ReactQueryProvider } from "@/lib/react-query";
 
 export const metadata: Metadata = {
   title: {
@@ -22,9 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={interFont.className}>
       <body className="bg-navy-950 text-navy-50 antialiased">
-        <NuqsAdapter>
-          {children}
-        </NuqsAdapter>
+        <ReactQueryProvider>
+          <NuqsAdapter>
+            {children}
+          </NuqsAdapter>
+        </ReactQueryProvider>
       </body>
     </html>
   );

@@ -4,12 +4,9 @@ import type { AuthSession } from "../auth";
 import { db } from "../db";
 import { issueLikes, issues } from "../db/schema";
 import { requireAuth } from "../middlewares/auth";
+import { LikeResponseSchema } from "./schemas/issue-likes";
 
-const LikeResponseSchema = z.object({
-  id: z.uuidv4(),
-  likes: z.number().int(),
-  liked: z.boolean(),
-});
+
 
 const ErrorSchema = z.object({
   error: z.string(),
