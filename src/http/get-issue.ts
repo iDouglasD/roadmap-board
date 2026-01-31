@@ -1,5 +1,5 @@
 
-import {  IssueSchema } from '@/api/routes/get-issue'
+import { IssueSchema } from '@/api/routes/get-issue'
 import { clientEnv } from '@/client-env';
 
 interface GetIssueParams {
