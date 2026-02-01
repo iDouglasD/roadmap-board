@@ -3,11 +3,11 @@ import { IssueSchema } from '@/api/routes/get-issue'
 import { clientEnv } from '@/client-env';
 
 interface GetIssueParams {
-    id: string;
+    issueId: string;
 }
 
-export async function getIssue({ id }: GetIssueParams) {
-  const url = new URL(`/api/issues/${id}`, clientEnv.NEXT_PUBLIC_API_URL);
+export async function getIssue({ issueId }: GetIssueParams) {
+  const url = new URL(`/api/issues/${issueId}`, clientEnv.NEXT_PUBLIC_API_URL);
 
   const response = await fetch(url);
   const data = await response.json();
