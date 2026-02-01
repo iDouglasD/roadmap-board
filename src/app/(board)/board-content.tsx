@@ -1,7 +1,7 @@
 'use client'
 
 import { useQuery } from "@tanstack/react-query";
-import { ArchiveIcon, MessageCircleIcon, ThumbsUpIcon } from "lucide-react";
+import { ArchiveIcon, MessageCircleIcon } from "lucide-react";
 import { useMemo } from "react";
 import type z from "zod";
 import type { IssuesListResponseSchema } from "@/api/routes/list-issues";
@@ -29,7 +29,7 @@ export function BoardContent({ issues }: BoardContentProps) {
     ...issues.done,
   ].map(issue => issue.id);
 
-  const { data: interactionsData, isLoading: isLoadingInteractions } = useQuery({
+  const { data: interactionsData } = useQuery({
     queryKey: ['issue-likes', allIssueIds.sort().join(',')],
     queryFn: () => getIssueInterections({ issueIds: allIssueIds }),
   })
