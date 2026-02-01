@@ -21,6 +21,7 @@ export function IssueCommentForm({ onCreateComment, isAuthenticated }: IssueComm
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting }
   } = useForm<CreateCommentData>({
     resolver: zodResolver(createCommentSchema),
@@ -28,6 +29,7 @@ export function IssueCommentForm({ onCreateComment, isAuthenticated }: IssueComm
 
   async function handleCreateComment({ text }: CreateCommentData) {
     await onCreateComment(text);
+    reset();
   }
 
   return (
